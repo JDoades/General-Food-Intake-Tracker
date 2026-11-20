@@ -1,0 +1,9 @@
+{
+ "model": "Xenova/mobileclip_s0",
+ "revision": "757d59c9c6870a76a4b0306f05f5061bca15c39f",
+ "visionFile": "onnx/vision_model_fp16.onnx",
+ "dim": 512,
+ "dishes": 373,
+ "imageSize": 256,
+ "logitScale": 100
+}
