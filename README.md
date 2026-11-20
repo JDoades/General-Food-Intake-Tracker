@@ -2,11 +2,11 @@
 
 A free, private, rough food tracker that lives on your phone.
 
-You log whole meals ("spaghetti bolognese", "chippy tea", "meal deal"), not ingredients, and Ish shows your day as a rounded percentage: **"About 60% of today's food"**. It's made to stop overeating without tipping into obsessive counting and under-eating.
+You log whole meals ("spaghetti bolognese", "chippy tea", "meal deal"), not ingredients, and Ish shows your day as a rounded percentage: **"About 60% of today's food"**. It's made to keep a rough eye on how much you eat, so you don't overeat, without tipping into obsessive counting.
 
 - **Rough on purpose.** The day is shown to the nearest 5%. Portions are Small, Normal or Large. No weighing, no grams.
-- **Kind.** Going over 100% gets a calm note, never a red warning. The ring marks where a good amount for the day starts, so eating too little is visible too.
-- **Can't be turned into a restriction tool.** A custom daily amount can't go below 1,200.
+- **Calm.** Going over 100% gets a short, calm note, not a red warning. The ring also marks where a good amount for the day starts, so eating too little shows up too.
+- **Sensible floor.** A custom daily amount can't go below 1,200.
 - **Private.** No accounts, no cookies, no tracking, no server. Everything stays on the phone.
 - **Works offline.** Install it to your home screen and it works with no signal.
 - **Photo guessing (optional).** Take a photo and Ish suggests what the dish might be, using a small model that runs on the phone. The photo never leaves it.
@@ -105,11 +105,9 @@ tests/                  unit tests and the end-to-end browser test
 tools/                  build scripts
 ```
 
-## If food feels hard right now
+## Not medical advice
 
-You don't have to deal with it alone. **Beat**, the UK's eating disorder charity, runs helplines: England 0808 801 0677, Scotland 0808 801 0432, Wales 0808 801 0433, Northern Ireland 0808 801 0434. Opening hours are on [beateatingdisorders.org.uk](https://www.beateatingdisorders.org.uk). **Samaritans** are there any time on 116 123.
-
-Ish is not a medical tool. If you're working with a dietitian or doctor, follow their guidance.
+Ish gives a rough picture of your day, not dietary advice. If you ever get worried about your eating, [Beat](https://www.beateatingdisorders.org.uk) has good advice.
 
 ## Licence
 

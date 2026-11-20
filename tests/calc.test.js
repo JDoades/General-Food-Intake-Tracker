@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   displayPercent, rawPercent, rangeStatus, portionKcal, clampTarget, targetFromSettings,
-  dayKey, shiftDay, lastNDays, totalKcal, roughKcal, formatKcal, kindOverLine, KIND_OVER_LINES,
+  dayKey, shiftDay, lastNDays, totalKcal, roughKcal, formatKcal, overLine, OVER_LINES,
   CUSTOM_MIN, CUSTOM_MAX,
 } from '../app/js/calc.js';
 
@@ -102,8 +102,8 @@ test('rough kcal display', () => {
   assert.equal(formatKcal(651), '~650 kcal');
 });
 
-test('kind over line is stable for a day and from the list', () => {
-  const a = kindOverLine('2026-11-19');
-  assert.equal(a, kindOverLine('2026-11-19'));
-  assert.ok(KIND_OVER_LINES.includes(a));
+test('over-100 line is stable for a day and from the list', () => {
+  const a = overLine('2026-11-19');
+  assert.equal(a, overLine('2026-11-19'));
+  assert.ok(OVER_LINES.includes(a));
 });

@@ -100,7 +100,7 @@ try {
   await page.getByRole('button', { name: /^Feast or takeaway/ }).click();
   kcal += 1300;
   assert.equal(await ring(), expectedPct(kcal, 2000));
-  assert.ok(await page.locator('.over-note').isVisible(), 'kind over-100 note shows');
+  assert.ok(await page.locator('.over-note').isVisible(), 'calm over-100 note shows');
   assert.equal(await page.locator('.ring .r-over').count(), 1, 'soft overflow ring drawn');
   log(`went over 100% (${await ring()}%): calm note and soft overflow ring, no warnings`);
   await page.waitForTimeout(5200); // let the toast go
@@ -147,8 +147,8 @@ try {
   await custom.blur();
   await page.waitForTimeout(200);
   assert.equal(await page.getByLabel('Your own daily amount in kcal').inputValue(), '1200');
-  assert.ok(await page.locator('.toast').innerText().then((t) => t.includes("can't be used to under-eat")));
-  log('a custom amount of 800 is raised to 1,200 with a kind explanation');
+  assert.ok(await page.locator('.toast').innerText().then((t) => t.includes('lowest daily amount')));
+  log('a custom amount of 800 is raised to 1,200 with a short note');
   await page.getByLabel(/^Average/).check();
 
   // Backup, delete everything, restore

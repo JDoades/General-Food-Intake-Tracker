@@ -2,7 +2,7 @@
 // It only ever serves this site's own files. It never contacts any other site.
 
 // Stamped by `npm run stamp` from the contents of every file below. Don't edit by hand.
-const VERSION = 'ish-core-297a7928be';
+const VERSION = 'ish-core-9d6cd375fa';
 
 const CORE = [
   './',

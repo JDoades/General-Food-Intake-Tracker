@@ -7,7 +7,7 @@ export const PRESETS = [
   { id: 'active', label: 'Very active or physical job', kcal: 2800 },
 ];
 
-// A custom daily target can't go below this. It stops the app being used as a restriction tool.
+// A custom daily target can't go below this, so it can't be set unrealistically low.
 export const CUSTOM_MIN = 1200;
 export const CUSTOM_MAX = 5000;
 
@@ -134,18 +134,17 @@ export function formatKcal(k) {
   return `~${roughKcal(k)} kcal`;
 }
 
-export const KIND_OVER_LINES = [
-  "That's okay. Tomorrow is a fresh day.",
-  "Some days need more food. That's normal.",
-  "Bodies don't count in single days. You're fine.",
-  'One day over is just one day. Be kind to yourself.',
+export const OVER_LINES = [
+  'A bit over today. That happens.',
+  'Over for today. No big deal.',
+  "Bigger day than usual. Tomorrow's a fresh start.",
 ];
 
-/** Picks a kind line that stays the same all day instead of changing on every render. */
-export function kindOverLine(key) {
+/** Picks a line that stays the same all day instead of changing on every render. */
+export function overLine(key) {
   let h = 0;
   for (const ch of key) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
-  return KIND_OVER_LINES[h % KIND_OVER_LINES.length];
+  return OVER_LINES[h % OVER_LINES.length];
 }
 
 /** Friendly label for a day key relative to today. */

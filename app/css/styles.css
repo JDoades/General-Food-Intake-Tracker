@@ -519,7 +519,6 @@ input[type="range"] { width: 100%; accent-color: var(--accent); min-height: 36px
 .about p:last-child { margin-bottom: 0; }
 .about h3 { font-size: 16px; margin: 16px 0 6px; }
 .about h3:first-child { margin-top: 0; }
-.helplines { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
 
 /* ---------- Segmented portion picker ---------- */
 

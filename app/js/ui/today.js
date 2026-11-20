@@ -6,7 +6,7 @@ import { entryRow } from './parts.js';
 import { QUICK } from '../foods.js';
 import {
   targetFromSettings, entriesForDay, totalKcal, displayPercent, rangeStatus,
-  kindOverLine, roughKcal, portionLabel,
+  overLine, roughKcal, portionLabel,
 } from '../calc.js';
 
 const DAY = 86400000;
@@ -52,7 +52,7 @@ export function renderToday(root, ctx) {
     h('h2', { class: 'section-title' }, 'Today'),
     entries.length
       ? h('ul', { class: 'list' }, entries.map((e) => entryRow(e, ctx.openEntry)))
-      : h('p', { class: 'empty' }, "Nothing yet. Log something whenever you're ready."),
+      : h('p', { class: 'empty' }, 'Nothing logged yet today.'),
   );
 }
 
@@ -66,7 +66,7 @@ function ringCard(pct, status, floorPct, day) {
         h('div', { class: 'ring-sub' }, status === 'empty' ? 'Nothing logged yet' : "of today's food"),
       ),
     ),
-    status === 'over' && h('p', { class: 'over-note' }, kindOverLine(day)),
+    status === 'over' && h('p', { class: 'over-note' }, overLine(day)),
     h('div', { class: 'ring-legend' }, h('i'), `Good range starts at ${floorPct}%`),
   );
 }

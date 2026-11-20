@@ -36,7 +36,7 @@ export function renderSettings(root, ctx) {
       customInput.value = String(value);
       actions.setSettings({ targetPreset: 'custom', targetKcal: value });
       if (clamped === 'low') {
-        toast(`Ish keeps the daily amount at ${CUSTOM_MIN.toLocaleString('en-GB')} or more, so it can't be used to under-eat.`, { duration: 8000 });
+        toast(`The lowest daily amount Ish allows is ${CUSTOM_MIN.toLocaleString('en-GB')}.`);
       } else if (clamped === 'high') {
         toast(`The most Ish allows is ${CUSTOM_MAX.toLocaleString('en-GB')} a day.`);
       }
@@ -44,7 +44,7 @@ export function renderSettings(root, ctx) {
   });
   const choices = [
     ...PRESETS.map((p) => ({ id: p.id, label: p.label, sub: `About ${p.kcal.toLocaleString('en-GB')} a day` })),
-    { id: 'custom', label: 'My own number', sub: 'For example, one a dietitian gave you' },
+    { id: 'custom', label: 'My own number', sub: 'If you already know the number you want' },
   ];
   const dailyCard = h('section', { class: 'card settings-group', 'aria-labelledby': 'set-daily' },
     h('p', { class: 'hint' }, 'This is what 100% means. Pick the closest. No weighing or body measurements needed.'),
@@ -216,16 +216,10 @@ export function renderSettings(root, ctx) {
     h('p', {}, 'Every number in Ish is a rough estimate. Portions, recipes and packs all vary. The aim is a general feel for your day, not precise counting.'),
     h('h3', {}, 'Private'),
     h('p', {}, 'No accounts, no tracking, no cookies. Your food log is stored only inside this app on this phone. The optional photo model downloads from the same place as the app, and photos never leave your phone.'),
-    h('h3', {}, 'If food feels hard right now'),
-    h('p', {}, "You don't have to deal with it alone. Beat is the UK's eating disorder charity:"),
-    h('ul', { class: 'helplines' },
-      h('li', {}, 'England: ', h('a', { href: 'tel:08088010677' }, '0808 801 0677')),
-      h('li', {}, 'Scotland: ', h('a', { href: 'tel:08088010432' }, '0808 801 0432')),
-      h('li', {}, 'Wales: ', h('a', { href: 'tel:08088010433' }, '0808 801 0433')),
-      h('li', {}, 'Northern Ireland: ', h('a', { href: 'tel:08088010434' }, '0808 801 0434')),
-    ),
-    h('p', { class: 'small muted' }, 'Opening hours are on ', h('a', { href: 'https://www.beateatingdisorders.org.uk', target: '_blank', rel: 'noopener noreferrer' }, 'beateatingdisorders.org.uk'), '.'),
-    h('p', {}, 'Samaritans, any time, day or night: ', h('a', { href: 'tel:116123' }, '116 123'), '.'),
+    h('h3', {}, 'Not medical advice'),
+    h('p', {}, 'Ish gives a rough picture of your day, not dietary advice. If you ever get worried about your eating, ',
+      h('a', { href: 'https://www.beateatingdisorders.org.uk', target: '_blank', rel: 'noopener noreferrer' }, 'Beat'),
+      ' has good advice.'),
     h('h3', {}, 'Licence'),
     h('p', { class: 'small' }, 'Ish is shared under the IDGAFPL. The photo model (MobileCLIP-S0, by Apple) and ONNX Runtime (by Microsoft, MIT licence) keep their own licences.'),
     h('p', { class: 'small muted' }, `Version ${APP_VERSION}`),
